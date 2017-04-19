@@ -2,7 +2,10 @@ package ar.gaston.carmenSanDiego;
 
 import ar.gaston.carmenSanDiego.Villano;
 import com.google.common.base.Objects;
+import java.util.List;
+import org.uqbar.commons.utils.Observable;
 
+@Observable
 @SuppressWarnings("all")
 public abstract class LugarDeInteres {
   private Boolean informante = Boolean.valueOf(false);
@@ -29,6 +32,8 @@ public abstract class LugarDeInteres {
     this.vil = v;
   }
   
+  public abstract String nombreLugar();
+  
   public void setearInformante() {
     boolean _or = false;
     Boolean _hayCuidador = this.hayCuidador();
@@ -43,6 +48,10 @@ public abstract class LugarDeInteres {
     } else {
       this.informante = Boolean.valueOf(true);
     }
+  }
+  
+  public List<LugarDeInteres> values() {
+    return null;
   }
   
   public void setearOcupante() {

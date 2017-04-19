@@ -7,4 +7,8 @@ public class Embajada extends LugarDeInteres {
   public void procesarInformante() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
+  
+  public String nombreLugar() {
+    return "Embajada";
+  }
 }

@@ -6,9 +6,10 @@ import java.util.List;
 import java.util.function.Consumer;
 import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtext.xbase.lib.Pure;
+import org.uqbar.commons.utils.Observable;
 
-@Accessors/* 
-@TransactionalAndObservable */
+@Accessors
+@Observable
 @SuppressWarnings("all")
 public class Pais {
   private String nombrePais;
@@ -17,10 +18,14 @@ public class Pais {
   
   private List<Pais> paisConexiones = new ArrayList<Pais>();
   
-  private ArrayList<LugarDeInteres> lugaresDeInteres = new ArrayList<LugarDeInteres>();
+  private List<LugarDeInteres> lugaresDeInteres = new ArrayList<LugarDeInteres>();
   
   public void setNombrePais(final String n) {
     this.nombrePais = n;
+  }
+  
+  public String getNombrePais() {
+    return this.nombrePais;
   }
   
   public void agregarCaracteristica(final String c) {
@@ -31,8 +36,16 @@ public class Pais {
     return this.caracteristicasDelPais;
   }
   
+  public boolean sacarCaracteristica(final String c) {
+    return this.caracteristicasDelPais.remove(c);
+  }
+  
   public void agregarPaisConexion(final Pais p) {
     this.paisConexiones.add(p);
+  }
+  
+  public boolean sacarPaisConexion(final Pais p) {
+    return this.paisConexiones.remove(p);
   }
   
   public List<Pais> getPaisConexion() {
@@ -48,8 +61,24 @@ public class Pais {
     }
   }
   
+  public boolean sacarLugarDeInteres(final LugarDeInteres l) {
+    return this.lugaresDeInteres.remove(l);
+  }
+  
   public List<LugarDeInteres> getlugaresDeInteres() {
     return this.lugaresDeInteres;
+  }
+  
+  public LugarDeInteres getPrimerLugarDeInteres() {
+    return this.lugaresDeInteres.get(1);
+  }
+  
+  public LugarDeInteres getSegundoLugarDeInteres() {
+    return this.lugaresDeInteres.get(2);
+  }
+  
+  public LugarDeInteres getTercerLugarDeInteres() {
+    return this.lugaresDeInteres.get(3);
   }
   
   public void recorrerLugaresDeInteres() {
@@ -59,11 +88,6 @@ public class Pais {
       }
     };
     this.lugaresDeInteres.forEach(_function);
-  }
-  
-  @Pure
-  public String getNombrePais() {
-    return this.nombrePais;
   }
   
   public void setCaracteristicasDelPais(final List<String> caracteristicasDelPais) {
@@ -80,11 +104,11 @@ public class Pais {
   }
   
   @Pure
-  public ArrayList<LugarDeInteres> getLugaresDeInteres() {
+  public List<LugarDeInteres> getLugaresDeInteres() {
     return this.lugaresDeInteres;
   }
   
-  public void setLugaresDeInteres(final ArrayList<LugarDeInteres> lugaresDeInteres) {
+  public void setLugaresDeInteres(final List<LugarDeInteres> lugaresDeInteres) {
     this.lugaresDeInteres = lugaresDeInteres;
   }
 }

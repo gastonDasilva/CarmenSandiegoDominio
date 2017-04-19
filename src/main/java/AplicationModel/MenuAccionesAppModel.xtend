@@ -1,0 +1,5 @@
+package AplicationModel
+
+class MenuAccionesAppModel {
+	
+}

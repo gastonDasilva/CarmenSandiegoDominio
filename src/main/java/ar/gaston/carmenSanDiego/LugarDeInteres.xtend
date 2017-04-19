@@ -1,5 +1,10 @@
 package ar.gaston.carmenSanDiego
 
+import org.uqbar.commons.utils.Observable
+import java.util.List
+import java.util.ArrayList
+
+@Observable
 abstract class LugarDeInteres {
 	// Solo pueden ser Club,Embajada,Banco y Biblioteca 
 	    Boolean informante = false  //Solo puede haber una persona en el lugar, es decir que solo un booleano puede ser true
@@ -23,6 +28,8 @@ abstract class LugarDeInteres {
 		def void setearVillanoEnLugar(Villano v){
 			vil = v;
 		}
+		def String nombreLugar()
+		
 		
 		
 		def void setearInformante() {
@@ -32,6 +39,12 @@ abstract class LugarDeInteres {
 			}else{
 				  informante = true;
 				 }
+		}
+		
+	
+		def List<LugarDeInteres> values(){
+			
+		/*Sin hacer preguntar, en clase como hacerlo  */
 		}
 		
 		def void setearOcupante() {
@@ -81,8 +94,7 @@ abstract class LugarDeInteres {
 		}
 		
 		def void procesarInformante()
-		// depende de cada lugar la informacion que da 
-		
+	
 		
 	
 		

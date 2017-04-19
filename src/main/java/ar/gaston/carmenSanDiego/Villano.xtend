@@ -24,9 +24,17 @@ class Villano {
     	señasParticulares.add(seña);
     }
     
+    def void sacarSeña(String seña){
+    	señasParticulares.remove(seña)
+    }
+    
     def void agregarHobbie (String h){
     	
     	hobbies.add(h);
+    }
+    
+    def sacarHobbie(String h){
+    	hobbies.remove(h)
     }
 	
 }

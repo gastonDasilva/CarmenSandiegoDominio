@@ -26,7 +26,15 @@ public class Villano {
     this.señasParticulares.add(seña);
   }
   
+  public void sacarSeña(final String seña) {
+    this.señasParticulares.remove(seña);
+  }
+  
   public void agregarHobbie(final String h) {
     this.hobbies.add(h);
+  }
+  
+  public boolean sacarHobbie(final String h) {
+    return this.hobbies.remove(h);
   }
 }

@@ -6,4 +6,8 @@ class Banco extends LugarDeInteres{
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 	
+	override nombreLugar() {
+		return "Banco"
+	}
+	
 }
