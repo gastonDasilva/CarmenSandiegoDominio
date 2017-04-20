@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtext.xbase.lib.Pure;
+import org.uqbar.commons.model.ObservableUtils;
 import org.uqbar.commons.utils.Observable;
 
 @Accessors
@@ -25,14 +26,12 @@ public class Mapamundi implements Serializable {
     return _xblockexpression;
   }
   
-  public boolean agregarPais() {
-    boolean _xblockexpression = false;
-    {
-      final Pais p = new Pais();
-      this.paisSeleccionado = p;
-      _xblockexpression = this.paises.add(p);
-    }
-    return _xblockexpression;
+  public boolean agregarNuevoPais(final Pais pais) {
+    return this.paises.add(pais);
+  }
+  
+  public void aceptarPaisEditado() {
+    ObservableUtils.firePropertyChanged(this, "paises");
   }
   
   @Pure

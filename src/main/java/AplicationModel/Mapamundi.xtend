@@ -6,6 +6,7 @@ import java.util.List
 import ar.gaston.carmenSanDiego.Pais
 import java.util.ArrayList
 import org.uqbar.commons.utils.Observable
+import org.uqbar.commons.model.ObservableUtils
 
 @Accessors
 @Observable
@@ -20,9 +21,13 @@ class Mapamundi implements Serializable  {
 		paisSeleccionado= null
 	}
 	
-	def agregarPais(){
-		val p = new Pais()
-		paisSeleccionado = p
-		paises.add(p)
+	def agregarNuevoPais(Pais pais) {
+		paises.add(pais)
 	}
+	
+	def aceptarPaisEditado() {
+		
+		ObservableUtils.firePropertyChanged(this, "paises")
+	}
+	
 }
