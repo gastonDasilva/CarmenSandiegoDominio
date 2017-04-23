@@ -3,7 +3,7 @@ package ar.gaston.carmenSanDiego
 class Banco extends LugarDeInteres{
 	
 	override procesarInformante() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+			"Vi a alguien como describe!"
 	}
 	
 	override nombreLugar() {

@@ -4,10 +4,10 @@ class Embajada extends LugarDeInteres {
 	
 	
 	override procesarInformante() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+			"Vi a alguien como describe!"
 	}
 	
-	override nombreLugar() {
+	override String nombreLugar() {
 		return "Embajada"
 	}
 	

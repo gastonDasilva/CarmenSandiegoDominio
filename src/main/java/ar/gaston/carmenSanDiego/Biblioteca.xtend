@@ -2,8 +2,8 @@ package ar.gaston.carmenSanDiego
 
 class Biblioteca extends LugarDeInteres{
 	
-	override procesarInformante() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	override String  procesarInformante() {
+		"Vi a alguien como describe!"
 	}
 	
 	override nombreLugar() {

@@ -2,7 +2,6 @@ package ar.gaston.carmenSanDiego
 
 import org.uqbar.commons.utils.Observable
 import java.util.List
-import java.util.ArrayList
 
 @Observable
 abstract class LugarDeInteres {
@@ -10,7 +9,8 @@ abstract class LugarDeInteres {
 	    Boolean informante = false  //Solo puede haber una persona en el lugar, es decir que solo un booleano puede ser true
 		Boolean ocupante = false  
 		Boolean cuidador = false 
-		Villano vil = null // indica si el villano esta en el lugar de interes o no 
+		Villano vil = null // indica si el villano esta en el lugar de interes o no
+		Caso cas 
 		
 		  
 		def  hayInformante() {
@@ -23,6 +23,14 @@ abstract class LugarDeInteres {
 
 		def hayCuidador() {
 			cuidador
+		}
+		
+		def hayVillanoEnElLugar(){
+			if(vil!= null){
+			 true
+			}else{
+				false
+			}
 		}
 
 		def void setearVillanoEnLugar(Villano v){
@@ -55,6 +63,16 @@ abstract class LugarDeInteres {
 				  this.ocupante = true;
 			     }
 		}
+		
+			def void setearOcupante(Villano villano) {
+			//setea un ocupante que puede ser el villano o no  al lugar de interes 
+			if (this.hayCuidador() || this.hayInformante()){
+				System.out.println("Ya hay un individuo en el lugar" );
+			}else{
+				  this.ocupante = true;
+				  this.vil = villano
+			     }
+		}
 
 		def void setearCuidador() {
 			//setea un true para que halla un cuidador al lugar de interes 
@@ -66,34 +84,40 @@ abstract class LugarDeInteres {
 			
 		}
 		
-		def void procesar(){
-			
-			this.procesarCuidador()
-			this.procesarOcupante
-			//this.procesarInformante
-		}
-		
-		def void procesarCuidador() {
-			//Prop: verifica si hay un cuidador en el lugar y procesar 
-			if (this.hayCuidador()){
-				System.out.println("CUIDADOR: Te equivocaste de pais bato, mejor volve por donde viniste" );
-			   }
-		}
-		
-		def void procesarOcupante (){
-			// si el villano esta en el lugar se lo detiene sino se le advierte al detective que el villano esta en la
-			// ciudad
-			
-			if(this.hayOcupante()){
-				if (vil== null ){
-					System.out.println("CUIDADO DETECTIVE! el villano esta en la ciudad" );
-				    }else{
-				          System.out.println("Alto!!"+vil.nombre+" Queda Arrestado" );
-			             }
+		def String procesar(){
+			if(this.hayCuidador()){
+				procesarCuidador()
+			}else{
+				if(this.hayOcupante()){
+					procesarOcupante()
+				}else{
+					if(this.hayInformante()){
+						procesarInformante()
+					}
+				}
 			}
 		}
 		
-		def void procesarInformante()
+		def String procesarCuidador() {
+			//Prop: verifica si hay un cuidador en el lugar y procesar 
+				"CUIDADOR: Te equivocaste de pais bato, mejor volve por donde viniste" 
+		}
+		
+		def String procesarOcupante (){
+			// si el villano esta en el lugar se lo detiene sino se le advierte al detective que el villano esta en la
+			// ciudad
+				if (vil== null ){
+					"CUIDADO DETECTIVE! el villano esta en la ciudad" 
+				    }else{
+				          "Alto!!"+/*cas.ordenDeArrestoAlVillano.*/vil.nombre+" Queda Arrestado" 
+			             }
+			}
+		
+		def String procesarInformante()
+	
+	def void setearCaso(Caso caso){
+		cas= caso
+	}
 	
 		
 	

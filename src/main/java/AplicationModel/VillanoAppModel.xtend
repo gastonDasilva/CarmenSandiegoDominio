@@ -1,7 +1,11 @@
 package AplicationModel
 
 import ar.gaston.carmenSanDiego.Villano
+import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.utils.Observable
 
+@Accessors
+@Observable
 class VillanoAppModel {
 	
 	Villano villanoSelec
@@ -30,4 +34,5 @@ class VillanoAppModel {
 	def eliminarHobbieSeleccionado(){
 		villanoSelec.sacarHobbie(hobbiesASacar)
 	}
+	
 }

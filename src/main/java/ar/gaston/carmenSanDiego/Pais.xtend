@@ -67,15 +67,15 @@ class Pais {
 	}
 	
 	def LugarDeInteres getPrimerLugarDeInteres(){
-		return lugaresDeInteres.get(1)
+		return lugaresDeInteres.get(0)
 	}
 	
 	def LugarDeInteres getSegundoLugarDeInteres(){
-		return lugaresDeInteres.get(2)
+		return lugaresDeInteres.get(1)
 	}
 	
 	def LugarDeInteres getTercerLugarDeInteres(){
-		return lugaresDeInteres.get(3)
+		return lugaresDeInteres.get(2)
 	}
 	       
 	def void recorrerLugaresDeInteres(){
@@ -83,6 +83,12 @@ class Pais {
 	//	for (int i= 0;i != lugaresDeInteres.size(); i++ ){
 	       lugaresDeInteres.forEach[ procesar ]
 		}
+	
+	def setearCasoAlugares(Caso caso) {
+		for( LugarDeInteres l: lugaresDeInteres){
+				l.setearCaso(caso)
+			}
+	}
 		
 	//}
 	

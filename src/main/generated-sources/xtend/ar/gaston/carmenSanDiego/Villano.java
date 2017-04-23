@@ -2,7 +2,12 @@ package ar.gaston.carmenSanDiego;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.eclipse.xtend.lib.annotations.Accessors;
+import org.eclipse.xtext.xbase.lib.Pure;
+import org.uqbar.commons.utils.Observable;
 
+@Accessors
+@Observable
 @SuppressWarnings("all")
 public class Villano {
   private String nombre;
@@ -18,7 +23,7 @@ public class Villano {
     this.sexo = s;
   }
   
-  public String nombre() {
+  public String nombreVillano() {
     return this.nombre;
   }
   
@@ -36,5 +41,41 @@ public class Villano {
   
   public boolean sacarHobbie(final String h) {
     return this.hobbies.remove(h);
+  }
+  
+  @Pure
+  public String getNombre() {
+    return this.nombre;
+  }
+  
+  public void setNombre(final String nombre) {
+    this.nombre = nombre;
+  }
+  
+  @Pure
+  public String getSexo() {
+    return this.sexo;
+  }
+  
+  public void setSexo(final String sexo) {
+    this.sexo = sexo;
+  }
+  
+  @Pure
+  public List<String> getSeñasParticulares() {
+    return this.señasParticulares;
+  }
+  
+  public void setSeñasParticulares(final List<String> señasParticulares) {
+    this.señasParticulares = señasParticulares;
+  }
+  
+  @Pure
+  public List<String> getHobbies() {
+    return this.hobbies;
+  }
+  
+  public void setHobbies(final List<String> hobbies) {
+    this.hobbies = hobbies;
   }
 }

@@ -17,7 +17,7 @@ class PaisAppModel {
 	Pais paisConexionSelec 
 	String caracteristicaASacar
 	String caracteristicaAAgregar
-	List<Pais> paisConexionesPosibles = this.paisesConexionesPosibles()
+	//List<Pais> paisConexionesPosibles = this.paisesConexionesPosibles()
 	
 	new(Pais pais) {
 		paisSelec = pais
@@ -30,10 +30,10 @@ class PaisAppModel {
 	def List<LugarDeInteres> getlugaresDeInteresPosibles(){
 		//return LugarDeInteres.values
 	}
-	
+	/* 
 	def paisesConexionesPosibles(){
 		paisSelec.getPaisConexion
-	}
+	}*/
 	
 	def agregarLugarDeInteresSelec(){
 		paisSelec.agregarLugarDeInteres(LugarDeInteresSeleccionado)

@@ -1,5 +1,6 @@
 package ar.gaston.carmenSanDiego;
 
+import ar.gaston.carmenSanDiego.Caso;
 import ar.gaston.carmenSanDiego.LugarDeInteres;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,15 +71,15 @@ public class Pais {
   }
   
   public LugarDeInteres getPrimerLugarDeInteres() {
-    return this.lugaresDeInteres.get(1);
+    return this.lugaresDeInteres.get(0);
   }
   
   public LugarDeInteres getSegundoLugarDeInteres() {
-    return this.lugaresDeInteres.get(2);
+    return this.lugaresDeInteres.get(1);
   }
   
   public LugarDeInteres getTercerLugarDeInteres() {
-    return this.lugaresDeInteres.get(3);
+    return this.lugaresDeInteres.get(2);
   }
   
   public void recorrerLugaresDeInteres() {
@@ -88,6 +89,12 @@ public class Pais {
       }
     };
     this.lugaresDeInteres.forEach(_function);
+  }
+  
+  public void setearCasoAlugares(final Caso caso) {
+    for (final LugarDeInteres l : this.lugaresDeInteres) {
+      l.setearCaso(caso);
+    }
   }
   
   public void setCaracteristicasDelPais(final List<String> caracteristicasDelPais) {
