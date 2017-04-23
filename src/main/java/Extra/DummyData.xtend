@@ -24,8 +24,10 @@ class DummyData {
 		val Pais peru = new Pais()
 		peru => [
 			nombrePais= "Peru"
-			agregarCaracteristica("es grande")
+			agregarCaracteristica("hablan Español")
 			agregarCaracteristica("su bandera es roja y blanca")
+			agregarCaracteristica("Comen Palomas")
+			agregarCaracteristica("Su moneda es el Peso")
 			agregarLugarDeInteres(new Embajada=> [
 					setearOcupante(carmen)
 					])
@@ -39,16 +41,16 @@ class DummyData {
 		val Pais inglaterra = new Pais()
 			inglaterra=> [
 				nombrePais= "Inglaterra"
-				agregarCaracteristica("es una isla")
-				agregarCaracteristica("tiene reyna")
+				agregarCaracteristica("esta una isla")
+				agregarCaracteristica("tiene reynado")
 				agregarPaisConexion(peru)
 				agregarLugarDeInteres(new Embajada=> [
 					setearInformante()
 					])
-				agregarLugarDeInteres(new Club=> [
+				agregarLugarDeInteres(new Banco=> [
 					setearInformante()
 					])
-				agregarLugarDeInteres(new Biblioteca=> [
+				agregarLugarDeInteres(new Club=> [
 					setearInformante()
 					])		
 				]
@@ -72,8 +74,9 @@ class DummyData {
 		val Pais egipto = new Pais()
 			egipto => [	
 			nombrePais= "Egipto"
-			agregarCaracteristica("esta en africa")
+			agregarCaracteristica("se localiza en africa")
 			agregarCaracteristica("su capital es El Cairo")
+			agregarCaracteristica("Su idioma es el egipcio")
 			agregarPaisConexion(inglaterra)
 			agregarPaisConexion(uruguay)
 			agregarLugarDeInteres(new Embajada=> [
@@ -105,10 +108,13 @@ class DummyData {
 		new Villano=> [
 			nombre = nombreV
 			sexo = "Femenino"
-			agregarSeña( "pelo rubio")
-			agregarSeña( "gordo")
+			agregarSeña( " tiene el pelo rubio")
+			agregarSeña( "tiene ojos azules")
+			agregarSeña( " usa una collar de rubies ")
+			agregarSeña( " tenia una bufanda azul")
 			agregarHobbie("jugar al futbol")
 			agregarHobbie("ver anime")
+			agregarHobbie("escuchar musica de los 80")
 		]
 	}
 	

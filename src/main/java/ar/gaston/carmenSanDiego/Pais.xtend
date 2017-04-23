@@ -4,6 +4,7 @@ import java.util.ArrayList
 import java.util.List
 import org.uqbar.commons.utils.Observable
 import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.model.UserException
 
 @Accessors
 @Observable
@@ -50,7 +51,7 @@ class Pais {
 	
 	def void agregarLugarDeInteres(LugarDeInteres l){
 		if (lugaresDeInteres.contains(l)){
-			System.out.println("Error el lugar de interes"+ l+ "ya esta en la lista" );
+			throw new UserException("Error el lugar de interes "+ l.nombreLugar+ " ya esta en la lista" );
 		   } 
 		    else
 		        {

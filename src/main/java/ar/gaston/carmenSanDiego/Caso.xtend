@@ -3,7 +3,9 @@ package ar.gaston.carmenSanDiego
 import java.util.ArrayList
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.utils.Observable
 
+@Observable
 @Accessors
 class Caso {
 	String nombreCaso
@@ -36,6 +38,10 @@ class Caso {
 	
 	def getReporteDelCaso(){
 		reporteDelCaso
+	}
+	
+	def getResponsable(){
+		responsable
 	}
 	
 	def void iniciarCaso (){

@@ -24,6 +24,12 @@ abstract class LugarDeInteres {
 		def hayCuidador() {
 			cuidador
 		}
+		def getVillano(){
+			vil
+		}
+		def getCaso(){
+			cas
+		}
 		
 		def hayVillanoEnElLugar(){
 			if(vil!= null){
@@ -109,14 +115,18 @@ abstract class LugarDeInteres {
 				if (vil== null ){
 					"CUIDADO DETECTIVE! el villano esta en la ciudad" 
 				    }else{
-				          "Alto!!"+/*cas.ordenDeArrestoAlVillano.*/vil.nombre+" Queda Arrestado" 
+				    	  if(cas.ordenDeArrestoAlVillano == null){
+				    	  	 "CUIDADO DETECTIVE!El villano escapo por no tener una orden de arresto"
+				    	  }else{
+				          "Alto!!"+cas.ordenDeArrestoAlVillano.nombre+" Queda Arrestado" 
+				          	}
 			             }
 			}
 		
 		def String procesarInformante()
 	
-	def void setearCaso(Caso caso){
-		cas= caso
+	def void setearCaso(Caso c){
+		cas = c;
 	}
 	
 		

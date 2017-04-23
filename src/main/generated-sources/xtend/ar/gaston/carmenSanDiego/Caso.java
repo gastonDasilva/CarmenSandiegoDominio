@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtext.xbase.lib.Pure;
+import org.uqbar.commons.utils.Observable;
 
+@Observable
 @Accessors
 @SuppressWarnings("all")
 public class Caso {
@@ -49,6 +51,10 @@ public class Caso {
     return this.reporteDelCaso;
   }
   
+  public Villano getResponsable() {
+    return this.responsable;
+  }
+  
   public void iniciarCaso() {
     this.paisDelRobo.recorrerLugaresDeInteres();
   }
@@ -59,11 +65,6 @@ public class Caso {
   
   public void setNombreCaso(final String nombreCaso) {
     this.nombreCaso = nombreCaso;
-  }
-  
-  @Pure
-  public Villano getResponsable() {
-    return this.responsable;
   }
   
   public void setResponsable(final Villano responsable) {

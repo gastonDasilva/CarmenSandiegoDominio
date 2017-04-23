@@ -31,6 +31,14 @@ public abstract class LugarDeInteres {
     return this.cuidador;
   }
   
+  public Villano getVillano() {
+    return this.vil;
+  }
+  
+  public Caso getCaso() {
+    return this.cas;
+  }
+  
   public boolean hayVillanoEnElLugar() {
     boolean _xifexpression = false;
     boolean _notEquals = (!Objects.equal(this.vil, null));
@@ -150,16 +158,25 @@ public abstract class LugarDeInteres {
     if (_equals) {
       _xifexpression = "CUIDADO DETECTIVE! el villano esta en la ciudad";
     } else {
-      String _nombre = this.vil.getNombre();
-      String _plus = ("Alto!!" + _nombre);
-      _xifexpression = (_plus + " Queda Arrestado");
+      String _xifexpression_1 = null;
+      Villano _ordenDeArrestoAlVillano = this.cas.getOrdenDeArrestoAlVillano();
+      boolean _equals_1 = Objects.equal(_ordenDeArrestoAlVillano, null);
+      if (_equals_1) {
+        _xifexpression_1 = "CUIDADO DETECTIVE!El villano escapo por no tener una orden de arresto";
+      } else {
+        Villano _ordenDeArrestoAlVillano_1 = this.cas.getOrdenDeArrestoAlVillano();
+        String _nombre = _ordenDeArrestoAlVillano_1.getNombre();
+        String _plus = ("Alto!!" + _nombre);
+        _xifexpression_1 = (_plus + " Queda Arrestado");
+      }
+      _xifexpression = _xifexpression_1;
     }
     return _xifexpression;
   }
   
   public abstract String procesarInformante();
   
-  public void setearCaso(final Caso caso) {
-    this.cas = caso;
+  public void setearCaso(final Caso c) {
+    this.cas = c;
   }
 }

@@ -27,6 +27,9 @@ class ResolverMisterioAppModel {
 	ExpedientesAppModel exp
 	List<String> nombrePaisesRecorrido = new ArrayList<String>
 	String nombrePaises 
+	String primerLugarNombre 
+	String segundoLugarNombre 
+	String tercerLugarNombre 
 	
 	new (){	
 		agarrarCasoRandom()	
@@ -36,8 +39,22 @@ class ResolverMisterioAppModel {
 		exp = ex		
 		agarrarCasoRandom()	
 		paisDondeEstoy = casoRandom.getPaisDelRobo
+		setearNombreLugares(paisDondeEstoy)
+		paisDondeEstoy.setearCasoAlugares(casoRandom)
 	}
 	
+	/*def setearNombreLugares(){
+		primerLugarNombre = this.getNombrePrimerLugarDeInteres()
+		segundoLugarNombre = this.getNombreSegundoLugarDeInteres()
+		tercerLugarNombre = this.getNombreTercerLugarDeInteres() 
+	}*/
+	
+	
+	def setearNombreLugares(Pais p){
+		primerLugarNombre = this.getNombrePrimerLugarDeInteres(p)
+		segundoLugarNombre = this.getNombreSegundoLugarDeInteres(p)
+		tercerLugarNombre = this.getNombreTercerLugarDeInteres (p)
+	}
 	def agarrarCasoRandom(){
 		 val randomC = new RandomExamples()
 		casoRandom = randomC.randomIn(casos)
@@ -79,10 +96,13 @@ class ResolverMisterioAppModel {
 		paisDondeEstoy = paisAnterior
 	}
 	
-	def viajar(ar.gaston.carmenSanDiego.Pais pais) {
+	def viajar(Pais pais) {
 		paisAnterior = paisDondeEstoy
 		paisDondeEstoy = pais
 		ObservableUtils.firePropertyChanged(this,"paisDondeEstoy")
+		paisDondeEstoy.setearCasoAlugares(casoRandom)
+		ObservableUtils.firePropertyChanged(this,"paisSeleccionado")
+		//this.setearNombreLugares(paisSeleccionado)
 	}
 	
 	def generarOrdenDeArresto() {
@@ -115,19 +135,25 @@ class ResolverMisterioAppModel {
 			return true
 		} else {false}
 	}
-	def  getNombrePrimerLugarDeInteres() {
+	def  getNombrePrimerLugarDeInteres(Pais p) {
 		ObservableUtils.firePropertyChanged(this,"paisDondeEstoy")
-		 paisDondeEstoy.getPrimerLugarDeInteres.nombreLugar
+		 p.getPrimerLugarDeInteres.nombreLugar
 	}
 	
-	def  getNombreSegundoLugarDeInteres() {
+	def  getNombreSegundoLugarDeInteres(Pais p) {
 		ObservableUtils.firePropertyChanged(this,"paisDondeEstoy")
-		 paisDondeEstoy.getSegundoLugarDeInteres.nombreLugar
+		 p.getSegundoLugarDeInteres.nombreLugar
 	}
 	
-	def  getNombreTercerLugarDeInteres() {
+	def  getNombreTercerLugarDeInteres(Pais p) {
 		ObservableUtils.firePropertyChanged(this,"paisDondeEstoy")
-		paisDondeEstoy.getTercerLugarDeInteres.nombreLugar
+		p.getTercerLugarDeInteres.nombreLugar
+	}
+	
+	def getOrdenDeArrestoNoEmitida() {
+		if(villanoAArrestar == null){
+			 true
+		} else {false}
 	}
 	
 }

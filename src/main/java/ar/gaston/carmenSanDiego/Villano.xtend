@@ -37,8 +37,16 @@ class Villano {
     	hobbies.add(h);
     }
     
+    def getHobbies(){
+    	hobbies
+    }
+    
     def sacarHobbie(String h){
     	hobbies.remove(h)
+    }
+    
+    def getSeñasParticulares(){
+    	señasParticulares
     }
 	
 }

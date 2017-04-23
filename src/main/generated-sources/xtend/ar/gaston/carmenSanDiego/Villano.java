@@ -39,8 +39,16 @@ public class Villano {
     this.hobbies.add(h);
   }
   
+  public List<String> getHobbies() {
+    return this.hobbies;
+  }
+  
   public boolean sacarHobbie(final String h) {
     return this.hobbies.remove(h);
+  }
+  
+  public List<String> getSeñasParticulares() {
+    return this.señasParticulares;
   }
   
   @Pure
@@ -61,18 +69,8 @@ public class Villano {
     this.sexo = sexo;
   }
   
-  @Pure
-  public List<String> getSeñasParticulares() {
-    return this.señasParticulares;
-  }
-  
   public void setSeñasParticulares(final List<String> señasParticulares) {
     this.señasParticulares = señasParticulares;
-  }
-  
-  @Pure
-  public List<String> getHobbies() {
-    return this.hobbies;
   }
   
   public void setHobbies(final List<String> hobbies) {

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtext.xbase.lib.Pure;
+import org.uqbar.commons.model.UserException;
 import org.uqbar.commons.utils.Observable;
 
 @Accessors
@@ -56,7 +57,10 @@ public class Pais {
   public void agregarLugarDeInteres(final LugarDeInteres l) {
     boolean _contains = this.lugaresDeInteres.contains(l);
     if (_contains) {
-      System.out.println((("Error el lugar de interes" + l) + "ya esta en la lista"));
+      String _nombreLugar = l.nombreLugar();
+      String _plus = ("Error el lugar de interes " + _nombreLugar);
+      String _plus_1 = (_plus + " ya esta en la lista");
+      throw new UserException(_plus_1);
     } else {
       this.lugaresDeInteres.add(l);
     }

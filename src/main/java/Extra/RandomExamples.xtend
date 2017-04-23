@@ -8,4 +8,8 @@ class RandomExamples {
 	def <T>randomIn(List<T> lista) {
 		lista.get(random.nextInt(lista.size))
 	}
+	
+	def  int nextInt(int i){
+		return random.nextInt(i)
+	}
 }
