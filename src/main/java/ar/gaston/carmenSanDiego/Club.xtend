@@ -1,7 +1,9 @@
 package ar.gaston.carmenSanDiego
 
 import Extra.RandomExamples
+import org.eclipse.xtend.lib.annotations.Accessors
 
+@Accessors
 class Club extends LugarDeInteres{
 	String primerCaracteristicaDELasSeñasParticulares
 	String segundaCaracteristicaDELasSeñasParticulares

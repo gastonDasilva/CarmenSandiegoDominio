@@ -65,20 +65,16 @@ class ResolverMisterioAppModel {
 	}
 	
 	def String nombreCaso(){
+		//devuelve el nombre del caso 
 		casoRandom.nombreCaso
 	}
 	
-	def   nombreDeLosPaisesRecorrido(){
-		
+	def nombreDeLosPaisesRecorrido(){
 		for( String p: nombrePaisesRecorrido){
-				nombrePaisesRecorrido.add(p)+"->"
+			nombrePaisesRecorrido.add(p)
 			}
 	}
-	
-	def String devolverNombreDeVillanoSiExiste(){
-		return "Orden ya emitida:" 
-	}
-	
+
 	def volverAlPaisAnterior() {
 		paisDondeEstoy = paisAnterior
 	}
@@ -93,6 +89,7 @@ class ResolverMisterioAppModel {
 	}
 	
 	def generarOrdenDeArresto() {
+		//genera una orden de arresto sobre "villanoAArrestar"
 		casoRandom.setearOrdenDeArrestoAlVillano(villanoAArrestar)
 		paisDondeEstoy.setearCasoAlugares(casoRandom)
 		
@@ -102,7 +99,6 @@ class ResolverMisterioAppModel {
 		//agrega a la lista paisFallido (osea aquellos paises que no tiene info sobre el villano) el pais acual "paisDondeEstoy"
 		// si este no se encuentra en dicha lista "PaisFallido" 
 		if(paisFallidos.contains(paisDondeEstoy)){
-			
 		}else{
 			  paisFallidos.add(paisDondeEstoy)
 			 }
@@ -112,7 +108,6 @@ class ResolverMisterioAppModel {
 	def agregarPaisRecorrido() {
 		//agrega el "paisDondeEstoy" a la lista de paisRecorrido si no lo tiene 
 			if(paisRecorrido.contains(paisDondeEstoy)){
-			
 		}else{
 			  paisRecorrido.add(paisDondeEstoy)
 			  nombrePaisesRecorrido.add((paisDondeEstoy.nombrePais)+"->")

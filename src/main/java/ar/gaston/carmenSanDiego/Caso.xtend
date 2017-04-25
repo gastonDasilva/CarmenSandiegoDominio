@@ -43,12 +43,7 @@ class Caso {
 	def getResponsable(){
 		responsable
 	}
-	
-	def void iniciarCaso (){
-		paisDelRobo.recorrerLugaresDeInteres();
-		
-	}
-	
+
 	def setearOrdenDeArrestoAlVillano(Villano villano) {
 		ordenDeArrestoAlVillano = villano
 	}

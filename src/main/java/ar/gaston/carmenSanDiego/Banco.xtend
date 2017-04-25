@@ -2,7 +2,9 @@ package ar.gaston.carmenSanDiego
 
 import Extra.RandomExamples
 import java.util.List
+import org.eclipse.xtend.lib.annotations.Accessors
 
+@Accessors
 class Banco extends LugarDeInteres{
 	Pais paisProximoDestino
 	String CaracteristicaDelPaisDestino

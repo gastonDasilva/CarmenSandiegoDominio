@@ -50,8 +50,8 @@ class Pais {
 	}
 	
 	def void agregarLugarDeInteres(LugarDeInteres l){
-		if (lugaresDeInteres.contains(l)){
-			throw new UserException("Error el lugar de interes "+ l.nombreLugar+ " ya esta en la lista" );
+		if (lugaresDeInteres.contains(l)||lugaresDeInteres.size == 3 ){
+			throw new UserException("Error el lugar de interes "+ l.nombreLugar+ " ya esta en la lista" )
 		   } 
 		    else
 		        {
@@ -79,19 +79,13 @@ class Pais {
 		return lugaresDeInteres.get(2)
 	}
 	       
-	def void recorrerLugaresDeInteres(){
-		
-	//	for (int i= 0;i != lugaresDeInteres.size(); i++ ){
-	       lugaresDeInteres.forEach[ procesar ]
-		}
-	
 	def setearCasoAlugares(Caso caso) {
 		for( LugarDeInteres l: lugaresDeInteres){
 				l.setearCaso(caso)
 			}
 	}
 		
-	//}
+	
 	
 }
 

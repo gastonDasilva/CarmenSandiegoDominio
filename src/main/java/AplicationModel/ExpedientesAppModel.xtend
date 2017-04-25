@@ -14,6 +14,8 @@ class ExpedientesAppModel  implements Serializable{
 	Villano villanoSeleccionado
 	List <Villano> villanos = new ArrayList<Villano>()
 	
+	new(){	
+	}
 	new(List <Villano> vill){
 		villanos = vill
 	}

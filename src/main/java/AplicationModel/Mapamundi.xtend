@@ -14,7 +14,10 @@ import org.uqbar.commons.model.ObservableUtils
 class Mapamundi implements Serializable  {
 	
 	List<Pais> paises = new ArrayList<Pais>
-	Pais paisSeleccionado 
+	Pais paisSeleccionado
+	
+	new(){	
+	} 
 	new(List<Pais> ps ){
 		paises = ps
 	}

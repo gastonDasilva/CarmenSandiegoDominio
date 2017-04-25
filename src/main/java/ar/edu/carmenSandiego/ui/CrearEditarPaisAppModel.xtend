@@ -52,6 +52,8 @@ class CrearEditarPaisAppModel {
 	}
 	
 	def List<LugarDeInteres> lugaresDeInteresPosibles(){
+		//Retorna todos los lugares de interes posibles
+		//Lo malo es que si se agrega un lugar nuevo hay que tocar el codigo de aca para agregarlo
 		val List<LugarDeInteres> res = new ArrayList<LugarDeInteres>
 		val LugarDeInteres emba =new Embajada
 			emba.setearCuidador()		
@@ -69,6 +71,7 @@ class CrearEditarPaisAppModel {
 	}
 	
 	def agregarLugarDeInteresSelec(){
+		/*Agrega un lugar de interes "lugarDeInteresSeleccionado" al pais "paisSelec" si el if es false */
 		 if (paisSelec.lugaresDeInteres.size ==3) {
         throw new UserException("El Pais ya tiene el limite establecido de lugares")
     }else{
