@@ -8,15 +8,19 @@ import org.uqbar.commons.utils.Observable
 @Accessors
 @Observable
 class Villano {
+	int id 
 	String nombre
 	String sexo
     List <String> señasParticulares = new ArrayList<String>()
     List<String> hobbies = new ArrayList<String>()
     
-    def void setVillano (String n, String s ){
-    	
-    	nombre = n;
-    	sexo = s;
+    new()
+    {}
+    
+    new(int id, String n, String s){
+		this.id = id
+    	nombre = n
+    	sexo = s
     }
     
     def nombreVillano(){

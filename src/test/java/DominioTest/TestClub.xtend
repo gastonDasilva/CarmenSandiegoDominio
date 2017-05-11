@@ -47,6 +47,8 @@ class TestClub {
 	def void procesarInformanteDelClubConUnaSolaCaracteristicaTest() {
 		Assert.assertEquals("Vi a alguien como describe!
             "+cl.pistasRelacionadasConElDestinoDelVillano ,cl.procesarInformante)
+            
+          
 	}
 	
 }

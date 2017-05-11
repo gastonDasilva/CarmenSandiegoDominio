@@ -76,7 +76,8 @@ class ResolverMisterioAppModel {
 	}
 
 	def volverAlPaisAnterior() {
-		paisDondeEstoy = paisAnterior
+			paisDondeEstoy = paisAnterior
+		
 	}
 	
 	def viajar(Pais pais) {

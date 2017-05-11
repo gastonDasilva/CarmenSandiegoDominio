@@ -1,7 +1,9 @@
 package ar.gaston.carmenSanDiego
 
 import org.uqbar.commons.utils.Observable
+import org.eclipse.xtend.lib.annotations.Accessors
 
+@Accessors
 @Observable
 abstract class LugarDeInteres {
 	// Solo pueden ser Club,Embajada,Banco y Biblioteca 
@@ -50,7 +52,7 @@ abstract class LugarDeInteres {
 		def void setearVillanoEnLugar(Villano v){
 			vil = v;
 		}
-		def String nombreLugar()
+		def abstract String nombreLugar()
 		
 		
 		
@@ -131,8 +133,25 @@ abstract class LugarDeInteres {
 		cas = c;
 	}
 	
-		
 	
+	
+	
+	/******AGREGADO PARA QUE FUNQUE *****/
+	def devolverPista(){
+		if(this.nombreLugar == "Embajada"){
+			"Vi a alguien sospechoso. Quiso cambiar su dinero a Euros. Me impresionó su auto convertible"
+		}else{if(nombreLugar == "Club"){
+			     "Vi a alguien sospechoso. Quiso cambiar su dinero a Euros,"
+				}else{ if(nombreLugar == "Biblioteca"){
+							"Vi a alguien sospechoso. Quiso cambiar su dinero a Euros.Me gusto mucho su pelo rojo"
+						 }else{ "Vi a alguien sospechoso. Me encantaron sus sandalias color verde "}
+					   
+					}
+			
+			}
+	
+		
+	}
 		
 		
 }
