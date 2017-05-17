@@ -12,7 +12,9 @@ class TestVillanoAppModel {
 	
 	 @Before
 	  def void setUp() {
-	    	luis.setVillano("Luis ortega", "Masculino")
+	    	luis.nombre = "Luis ortega"
+	    	luis.sexo = "Masculino"
+	    	
 	    	villanoApp = new VillanoAppModel(luis)
 	    	villanoApp.señaAAgregar = "Tiene pelo rubio"
 	    	villanoApp.señaSeleccionadaASacar =  "Tiene pelo rubio"

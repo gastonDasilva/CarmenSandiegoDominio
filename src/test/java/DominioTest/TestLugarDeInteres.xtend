@@ -18,7 +18,8 @@ class TestLugarDeInteres {
 	
    @Before
 	    def void setUp() {
-		juancho.setVillano("JUancho Sierra", "Masculino ");
+		juancho.nombre = "Juancho"
+		juancho.sexo = "Masculino"
 	    juancho.agregarHobbie("jugar al futbol");
 		juancho.agregarSeña("pelo rojo");
 	    juancho.agregarSeña("piel morena");

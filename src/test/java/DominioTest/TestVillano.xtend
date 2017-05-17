@@ -14,7 +14,8 @@ class TestVillano {
 	 
 	 @Test
 	def void setearNombreYSexoAlVillanoTest() {
-		vil.setVillano("Carlin","Masculino")
+		vil.nombre = "Carlin"
+		vil.sexo = "Masculino"
 		Assert.assertEquals("Carlin", vil.nombre)
 		Assert.assertEquals("Masculino", vil.sexo)
 	}

@@ -18,9 +18,10 @@ class TestPais {
 	val cl = new Club
 	val juancho = new Villano
 	
-	  @Before
-	    def void setUp() {
-		  juancho.setVillano("JUancho Sierra", "Masculino ")
+	@Before
+	def void setUp() {
+		  juancho.nombre = "JUancho Sierra"
+		  juancho.sexo = "Masculino"
 		  juancho.agregarHobbie("jugar al futbol")
 		  juancho.agregarSeña("pelo rojo")
 		  juancho.agregarSeña("piel morena")

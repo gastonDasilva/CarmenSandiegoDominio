@@ -17,7 +17,8 @@ class TestExpedientesAppModel {
 	 @Test
 	def void agregarNuevoVillanoTest() {
 		val Villano luisinho = new Villano
-		luisinho.setVillano("Luisinho Da Silva", "Masculino")
+		luisinho.nombre = "Luisinho Da Silva"
+		luisinho.sexo = "Masculino"
 		expApp.agregarNuevoVillano(luisinho)
 		Assert.assertEquals("Luisinho Da Silva", expApp.villanos.get(0).nombre)
 	}

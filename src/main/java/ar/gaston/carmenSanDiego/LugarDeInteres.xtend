@@ -94,6 +94,7 @@ abstract class LugarDeInteres {
 			
 		}
 		
+		//ver!!
 		def String procesar(){
 			if(this.hayCuidador()){
 				procesarCuidador()

@@ -14,7 +14,8 @@ class TestBiblioteca {
 	@Before
 	def void setUp() {
 		val juancho = new Villano()
-		juancho.setVillano("Juancho", "Masculino")
+		juancho.nombre = "Juancho"
+		juancho.sexo = "Masculino"
 		juancho.agregarSeña("Es Rubio")
 		juancho.agregarHobbie("ver anime")
 		val caso1 = new Caso("Caso1",juancho)

@@ -13,7 +13,8 @@ class TestCrearEditarVillanoAppModel {
 	 @Before
 	 def void setUp() {
 	 	val Villano luisinho = new Villano
-		luisinho.setVillano("Luisinho Da Silva", "Masculino")
+		luisinho.nombre = "Luisinho Da Silva"
+		luisinho.sexo =  "Masculino"
 	 	val ExpedientesAppModel exp = new ExpedientesAppModel()
 	 	crearEditarVill = new CrearEditarVillanoAppModel(exp,luisinho)
 	  }

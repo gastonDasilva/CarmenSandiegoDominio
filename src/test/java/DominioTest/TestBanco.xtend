@@ -14,7 +14,8 @@ class TestBanco {
 	@Before
 	def void setUp() {
 		val juancho = new Villano()
-		juancho.setVillano("Juancho", "Masculino")
+		juancho.nombre = "Juancho"
+		juancho.sexo = "Masculino"
 		juancho.agregarSeña("Es Rubio")
 		val caso1 = new Caso("Caso1",juancho)
 		val argenina = new Pais

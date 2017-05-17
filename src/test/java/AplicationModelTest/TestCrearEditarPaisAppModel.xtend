@@ -36,7 +36,7 @@ class TestCrearEditarPaisAppModel {
 		val Embajada embajada1= new Embajada()
 		crearEditarPais.lugarDeInteresSeleccionado = embajada1
 		crearEditarPais.agregarLugarDeInteresSelec
-		Assert.assertEquals("Embajada",crearEditarPais.paisSelec.getlugaresDeInteres.get(0).nombreLugar)
+		Assert.assertEquals("Embajada",crearEditarPais.paisSelec.lugaresDeInteres.get(0).nombreLugar)
 	}
 	
 	@Test
@@ -44,10 +44,10 @@ class TestCrearEditarPaisAppModel {
 		val Embajada embajada1= new Embajada()
 		crearEditarPais.lugarDeInteresSeleccionado = embajada1
 		crearEditarPais.agregarLugarDeInteresSelec
-		Assert.assertEquals("Embajada",crearEditarPais.paisSelec.getlugaresDeInteres.get(0).nombreLugar)
+		Assert.assertEquals("Embajada",crearEditarPais.paisSelec.lugaresDeInteres.get(0).nombreLugar)
 		crearEditarPais.lugarASacar = embajada1
 		crearEditarPais.eliminarLugarSeleccionado
-		Assert.assertEquals(0,crearEditarPais.paisSelec.getlugaresDeInteres.size)
+		Assert.assertEquals(0,crearEditarPais.paisSelec.lugaresDeInteres.size)
 	}
 	
 	@Test
