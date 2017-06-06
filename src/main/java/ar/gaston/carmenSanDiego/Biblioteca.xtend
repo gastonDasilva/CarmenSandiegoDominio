@@ -47,7 +47,7 @@ class Biblioteca extends LugarDeInteres{
 		// "CaracteristicaDELasSeñasParticulares" caracteristicas random de las señas particulares del villano
 		val randomCarac = new RandomExamples()
 		CaracteristicaDelPaisDestino = randomCarac.randomIn(paisProximoDestino.caracteristicasDelPais)
-		CaracteristicaDELasSeñasParticulares = randomCarac.randomIn(super.getCaso.getResponsable.getSeñasParticulares)
+		CaracteristicaDELasSeñasParticulares = randomCarac.randomIn(super.getCaso.getResponsable.getSenhasParticulares)
 	}
 	def paisRandomDelDestino (){
 		//obtiene el proximo pais del plan de escape 

@@ -26,16 +26,16 @@ class TestVillanoAppModel {
 	@Test
 	def void agregarSeñaSelecTest() {
 		villanoApp.agregarSeñaSelec
-		Assert.assertEquals("Tiene pelo rubio", luis.getSeñasParticulares.get(0))
+		Assert.assertEquals("Tiene pelo rubio", luis.getSenhasParticulares.get(0))
 	}
 	
 	@Test
 	def void eliminarSeñaSeleccionadoTest() {
 		villanoApp.agregarSeñaSelec
-		Assert.assertEquals("Tiene pelo rubio", luis.getSeñasParticulares.get(0))
-		Assert.assertEquals(1, luis.getSeñasParticulares.size)
+		Assert.assertEquals("Tiene pelo rubio", luis.getSenhasParticulares.get(0))
+		Assert.assertEquals(1, luis.getSenhasParticulares.size)
 		villanoApp.eliminarSeñaSeleccionado
-		Assert.assertEquals(0, luis.getSeñasParticulares.size)
+		Assert.assertEquals(0, luis.getSenhasParticulares.size)
 	}
 	
 	@Test

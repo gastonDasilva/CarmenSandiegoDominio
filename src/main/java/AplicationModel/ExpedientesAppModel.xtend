@@ -12,7 +12,7 @@ import org.apache.commons.lang.StringUtils
 @Observable
 @SuppressWarnings("all") 
 class ExpedientesAppModel  implements Serializable{
-	Villano villanoSeleccionado
+	//Villano villanoSeleccionado
 	List <Villano> villanos = new ArrayList<Villano>()
 	
 	new(){	
@@ -21,7 +21,16 @@ class ExpedientesAppModel  implements Serializable{
 		villanos = vill
 	}
 	def agregarNuevoVillano(Villano villano) {
+		villano.id = villanos.size +1
 		villanos.add(villano)
+	}
+	
+	def actualizarVillano(Villano villanoActualizado) {
+	var Villano villano = getVillano(villanoActualizado.id)
+		villano.nombre = villanoActualizado.nombre
+		villano.hobbies = villanoActualizado.hobbies
+		villano.senhasParticulares = villanoActualizado.senhasParticulares
+		villano.sexo = villanoActualizado.sexo
 	}
 	
 /********** creado para app web **************/

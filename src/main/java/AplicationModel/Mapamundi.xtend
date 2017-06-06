@@ -8,6 +8,7 @@ import java.util.ArrayList
 import org.uqbar.commons.utils.Observable
 import org.uqbar.commons.model.ObservableUtils
 import org.apache.commons.lang.StringUtils
+import ar.gaston.carmenSanDiego.Caso
 
 @Accessors
 @Observable
@@ -33,6 +34,12 @@ class Mapamundi implements Serializable  {
 		paises.add(pais)
 	}
 	
+	def setearCasoALugares(Caso cas){
+	for(Pais p : paises)
+		{
+		p.setearCasoAlugares(cas);
+		}
+	}
 	def aceptarPaisEditado() {
 		
 		ObservableUtils.firePropertyChanged(this, "paises")
@@ -54,4 +61,6 @@ class Mapamundi implements Serializable  {
 			this.paises.filter[ it.getNombrePais.toLowerCase.contains(substring.toLowerCase) ].toList			
 		}
 	}
+	
+	
 }

@@ -30,8 +30,8 @@ class Club extends LugarDeInteres{
 		// "primerCaracteristicaDELasSeñasParticulares"con una caracteristicas random de las señas particulares del villano
 		// "segundaCaracteristicaDELasSeñasParticulares" con una caracteristicas random de las señas particulares del villano
 		val randomCarac = new RandomExamples()
-		primerCaracteristicaDELasSeñasParticulares = randomCarac.randomIn(super.getCaso.getResponsable.getSeñasParticulares)
-		segundaCaracteristicaDELasSeñasParticulares = randomCarac.randomIn(super.getCaso.getResponsable.getSeñasParticulares)
+		primerCaracteristicaDELasSeñasParticulares = randomCarac.randomIn(super.getCaso.getResponsable.getSenhasParticulares)
+		segundaCaracteristicaDELasSeñasParticulares = randomCarac.randomIn(super.getCaso.getResponsable.getSenhasParticulares)
 	}
 	
 	def String darPistaAdicionalDeHobbies() {

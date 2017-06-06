@@ -21,6 +21,11 @@ class Caso {
 		nombreCaso = nombre
 		responsable = vres
 	}
+	new(int ids ,String nombre, Villano vres){
+		nombreCaso = nombre
+		responsable = vres
+		id = ids
+	}
 
 	def String getNombreCaso(){
 		nombreCaso

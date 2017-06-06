@@ -24,19 +24,19 @@ class TestVillano {
 	def void agregoDosSeñasParticularAlVillanoTest() {
 		vil.agregarSeña("Tiene pelo rubio")
 		vil.agregarSeña("Tiene ojos Azules")
-		Assert.assertEquals("Tiene pelo rubio", vil.señasParticulares.get(0))
-		Assert.assertEquals("Tiene ojos Azules", vil.señasParticulares.get(1))
+		Assert.assertEquals("Tiene pelo rubio", vil.senhasParticulares.get(0))
+		Assert.assertEquals("Tiene ojos Azules", vil.senhasParticulares.get(1))
 	}
 	
 	@Test
 	def void agregoDosSeñasParticularAlVillanoYLuegoSacoUnaSeñaTest() {
 		vil.agregarSeña("Tiene pelo rubio")
 		vil.agregarSeña("Tiene ojos Azules")
-		Assert.assertEquals("Tiene pelo rubio", vil.señasParticulares.get(0))
-		Assert.assertEquals("Tiene ojos Azules", vil.señasParticulares.get(1))
+		Assert.assertEquals("Tiene pelo rubio", vil.senhasParticulares.get(0))
+		Assert.assertEquals("Tiene ojos Azules", vil.senhasParticulares.get(1))
 		vil.sacarSeña("Tiene ojos Azules")
-		Assert.assertEquals("Tiene pelo rubio", vil.señasParticulares.get(0))
-		Assert.assertEquals(1, vil.señasParticulares.size)
+		Assert.assertEquals("Tiene pelo rubio", vil.senhasParticulares.get(0))
+		Assert.assertEquals(1, vil.senhasParticulares.size)
 	}
 	
 	@Test

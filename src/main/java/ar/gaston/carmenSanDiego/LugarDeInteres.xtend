@@ -9,7 +9,7 @@ abstract class LugarDeInteres {
 	// Solo pueden ser Club,Embajada,Banco y Biblioteca 
 	    Boolean informante = false  //Solo puede haber una persona en el lugar, es decir que solo un booleano puede ser true
 		Boolean ocupante = false  
-		Boolean cuidador = false
+		Boolean cuidador = true
 		Pais paisLugar 
 		Villano vil = null // indica si el villano esta en el lugar de interes o no
 		Caso cas // esto sirve para dar las pistas sobre el plan de escape del villano
@@ -60,54 +60,45 @@ abstract class LugarDeInteres {
 			// setea un true para que halla un informante en el lugar de interes
 			if (this.hayCuidador() || this.hayOcupante()){
 				System.out.println("Ya hay un individuo en el lugar" );
-			}else{
-				  informante = true;
-				 }
+				this.cuidador = false;
+				this.ocupante = false;
+			}
+				informante = true;
 		}
 		
 		def void setearOcupante() {
 			//setea un ocupante  que no es el villano  al lugar de interes 
 			if (this.hayCuidador() || this.hayInformante()){
 				System.out.println("Ya hay un individuo en el lugar" );
-			}else{
+				this.cuidador = false
+				this.informante = false 
+			}
 				  this.ocupante = true;
-			     }
 		}
 		
 			def void setearOcupante(Villano villano) {
 			//setea un ocupante que puede es el villano   al lugar de interes 
 			if (this.hayCuidador() || this.hayInformante()){
 				System.out.println("Ya hay un individuo en el lugar" );
-			}else{
+				this.cuidador = false
+				this.informante = false	
+			}
 				  this.ocupante = true;
 				  this.vil = villano
-			     }
 		}
 
 		def void setearCuidador() {
 			//setea un true para que halla un cuidador al lugar de interes 
 			if (this.hayInformante() || this.hayOcupante()){
 				System.out.println("Ya hay un individuo en el lugar" );
-			}else{
+				this.informante = false
+				this.ocupante = false 
+			}
 			      this.cuidador = true;
-			     }
 			
 		}
 		
 		//ver!!
-		def String procesar(){
-			if(this.hayCuidador()){
-				procesarCuidador()
-			}else{
-				if(this.hayOcupante()){
-					procesarOcupante()
-				}else{
-					if(this.hayInformante()){
-						procesarInformante()
-					}
-				}
-			}
-		}
 		
 		def String procesarCuidador() {
 			//Prop: verifica si hay un cuidador en el lugar y procesar 
@@ -123,13 +114,29 @@ abstract class LugarDeInteres {
 				    	  if(cas.ordenDeArrestoAlVillano == null){
 				    	  	 "CUIDADO DETECTIVE!El villano escapo por no tener una orden de arresto"
 				    	  }else{
-				          "Alto!!"+cas.ordenDeArrestoAlVillano.nombre+" Queda Arrestado" 
+				          "Alto!!"+cas.ordenDeArrestoAlVillano.nombre+" Queda Arrestado" +
+				          		if(cas.ordenDeArrestoAlVillano.nombre == cas.responsable.nombre){
+				          			" CONGRATULATIONS WACHIN! Atrapaste al villano, Sos una bestia "
+				          		} else {"FALLASTE, atrapaste a "+cas.ordenDeArrestoAlVillano.nombre+" Y ese loco no realizo el robo" }
 				          	}
 			             }
 			}
 		
 		def String procesarInformante()
 	
+			def String procesar(){
+			if(this.hayCuidador()){
+				procesarCuidador()
+			}else{
+				if(this.hayOcupante()){
+					procesarOcupante()
+				}else{
+					if(this.hayInformante()){
+						procesarInformante()
+					}
+				}
+			}
+		}
 	def void setearCaso(Caso c){
 		cas = c;
 	}
@@ -139,7 +146,7 @@ abstract class LugarDeInteres {
 	
 	/******AGREGADO PARA QUE FUNQUE *****/
 	def devolverPista(){
-		if(this.nombreLugar == "Embajada"){
+		/*if(this.nombreLugar == "Embajada"){
 			"Vi a alguien sospechoso. Quiso cambiar su dinero a Euros. Me impresionó su auto convertible"
 		}else{if(nombreLugar == "Club"){
 			     "Vi a alguien sospechoso. Quiso cambiar su dinero a Euros,"
@@ -149,10 +156,18 @@ abstract class LugarDeInteres {
 					   
 					}
 			
-			}
+			}*/
+			if(this.hayCuidador()){
+				this.procesarCuidador
+			}else{if(this.hayOcupante){
+					this.procesarOcupante
+					
+					}else{ this.procesarInformante}
+				}
+			
+	}
 	
 		
-	}
-		
-		
 }
+		
+		

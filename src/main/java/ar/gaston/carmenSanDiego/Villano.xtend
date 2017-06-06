@@ -2,8 +2,8 @@ package ar.gaston.carmenSanDiego
 
 import java.util.ArrayList
 import java.util.List
-import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
+import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors
 @Observable
@@ -11,7 +11,7 @@ class Villano {
 	int id 
 	String nombre
 	String sexo
-    List <String> señasParticulares = new ArrayList<String>()
+    List <String> senhasParticulares = new ArrayList<String>()
     List<String> hobbies = new ArrayList<String>()
     
     new()
@@ -29,11 +29,11 @@ class Villano {
     
     def void agregarSeña(String seña){
     	
-    	señasParticulares.add(seña);
+    	senhasParticulares.add(seña);
     }
     
     def void sacarSeña(String seña){
-    	señasParticulares.remove(seña)
+    	senhasParticulares.remove(seña)
     }
     
     def void agregarHobbie (String h){
@@ -41,16 +41,8 @@ class Villano {
     	hobbies.add(h);
     }
     
-    def getHobbies(){
-    	hobbies
-    }
-    
     def sacarHobbie(String h){
     	hobbies.remove(h)
-    }
-    
-    def getSeñasParticulares(){
-    	señasParticulares
     }
 	
 }
