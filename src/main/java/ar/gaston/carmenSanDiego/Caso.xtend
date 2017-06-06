@@ -8,6 +8,7 @@ import org.uqbar.commons.utils.Observable
 @Observable
 @Accessors
 class Caso {
+	int id
 	String nombreCaso
 	Villano responsable
 	List<Pais> planDeEscape = new ArrayList<Pais>(); 
