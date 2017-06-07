@@ -57,16 +57,24 @@ class Pais {
 		paisConexiones
 		
 	}
-	
+	def equals(LugarDeInteres l1, LugarDeInteres l2){
+		return l1.nombreLugar == l2.nombreLugar
+	}
 	def void agregarLugarDeInteres(LugarDeInteres l){
-		if (lugaresDeInteres.contains(l)||lugaresDeInteres.size == 3 ){
-			throw new UserException("Error el lugar de interes "+ l.nombreLugar+ " ya esta en la lista" )
-		   } 
-		    else
+		if (!lugaresDeInteres.contains(l) && lugaresDeInteres.size <= 2 ){
+			lugaresDeInteres.add(l)
+		}
+		else{
+			if(lugaresDeInteres.contains(l)){
+				throw new UserException("Error el lugar de interes "+ l.nombreLugar+ " ya esta en la lista" )
+			}
+			else
 		        {
-		        lugaresDeInteres.add(l)	
+		        throw new UserException("Los lugares de interes deben ser Exactamente 3")	
 	            }
-	       }
+		}
+	
+	}
 	def sacarLugarDeInteres(LugarDeInteres l){
 		lugaresDeInteres.remove(l)
 	}       

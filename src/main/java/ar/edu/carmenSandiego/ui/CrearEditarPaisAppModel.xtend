@@ -72,11 +72,11 @@ class CrearEditarPaisAppModel {
 	
 	def agregarLugarDeInteresSelec(){
 		/*Agrega un lugar de interes "lugarDeInteresSeleccionado" al pais "paisSelec" si el if es false */
-		 if (paisSelec.lugaresDeInteres.size ==3) {
-        throw new UserException("El Pais ya tiene el limite establecido de lugares")
-    }else{
+//		 if (paisSelec.lugaresDeInteres.size ==3) {
+//        throw new UserException("El Pais ya tiene el limite establecido de lugares")
+//    }else{
 		paisSelec.agregarLugarDeInteres(lugarDeInteresSeleccionado)		
-		}
+//		}
 	}
 	
 	def eliminarLugarSeleccionado(){
