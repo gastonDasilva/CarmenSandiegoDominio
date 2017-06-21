@@ -15,7 +15,11 @@ class Caso {
 	String reporteDelCaso
 	String objetoRobado
 	Pais paisDelRobo
+	Pais paisDondeEstoy
+	List<Pais> paisesVisitados = new ArrayList<Pais>();
+	List<Pais> paisesFallidos = new ArrayList<Pais>();  
 	Villano ordenDeArrestoAlVillano
+	
 	
 	new(String nombre, Villano vres){
 		nombreCaso = nombre

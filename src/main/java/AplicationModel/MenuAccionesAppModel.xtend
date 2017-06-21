@@ -9,7 +9,7 @@ import Extra.DummyData
 @SuppressWarnings("all")
 class MenuAccionesAppModel {
 	var DummyData dum = new DummyData()
-	ExpedientesAppModel exp = new ExpedientesAppModel(dum.getVillanos)
-	Mapamundi map = new Mapamundi(dum.getPaises) 
+	ExpedientesAppModel exp = dum.expediente
+	Mapamundi map = dum.paises
 	ResolverMisterioAppModel res= new ResolverMisterioAppModel(exp,dum.getCasos)
 }

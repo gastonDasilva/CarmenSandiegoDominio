@@ -10,6 +10,7 @@ import org.uqbar.commons.model.ObservableUtils
 import org.apache.commons.lang.StringUtils
 import ar.gaston.carmenSanDiego.Caso
 
+
 @Accessors
 @Observable
 @SuppressWarnings("all")
@@ -60,6 +61,15 @@ class Mapamundi implements Serializable  {
 		} else {
 			this.paises.filter[ it.getNombrePais.toLowerCase.contains(substring.toLowerCase) ].toList			
 		}
+	}
+	
+	def actualizarPais(Pais p) {
+		var pais = paises.findFirst[it.getId == p.id ]
+		pais.nombrePais = p.nombrePais
+		pais.caracteristicasDelPais = p.caracteristicasDelPais
+		pais.lugaresDeInteres = p.lugaresDeInteres
+		pais.paisConexiones = p.paisConexiones
+		
 	}
 	
 	
