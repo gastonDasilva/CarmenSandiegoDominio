@@ -5,6 +5,7 @@ import java.util.List
 import org.uqbar.commons.utils.Observable
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.model.UserException
+import java.util.Arrays
 
 @Accessors
 @Observable
@@ -14,7 +15,6 @@ class Pais {
 	List <String> caracteristicasDelPais = new ArrayList<String>()
 	List <Pais> paisConexiones = new ArrayList<Pais>()
 	List<LugarDeInteres> lugaresDeInteres= new ArrayList<LugarDeInteres>() //limite son 3 lugares sin repetidos
-	
 	
 	new(){}
 	
@@ -113,6 +113,39 @@ class Pais {
 			{
 				return l.devolverPista
 			}
+		}
+	}
+	def lugarPosible(String s){
+		if(s == "Embajada"){
+			return new Embajada
+		}
+		else{
+			if(s == "Club"){
+				return new Club
+			}
+			else{
+				if(s == "Banco"){
+					return new Banco
+				}
+				else{
+					return new Biblioteca
+				}
+			}
+		}
+	}
+	
+	def modificarLugares(List<String> strings) {
+		var ArrayList<LugarDeInteres> ls = new ArrayList<LugarDeInteres>
+		for(String s : strings){
+			print(s)
+			print(this.lugarPosible(s).nombreLugar)			
+			ls.add(this.lugarPosible(s))
+		}
+		if(ls.size()== 3){
+			this.lugaresDeInteres = ls
+		}
+		else{
+			throw new UserException("Los lugares de interes deben ser exactamente 3")
 		}
 	}
 		

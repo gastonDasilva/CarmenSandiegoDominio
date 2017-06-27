@@ -63,12 +63,15 @@ class Mapamundi implements Serializable  {
 		}
 	}
 	
-	def actualizarPais(Pais p) {
-		var pais = paises.findFirst[it.getId == p.id ]
-		pais.nombrePais = p.nombrePais
-		pais.caracteristicasDelPais = p.caracteristicasDelPais
-		pais.lugaresDeInteres = p.lugaresDeInteres
-		pais.paisConexiones = p.paisConexiones
+	def actualizarPais(int id, List<String> carac, List<String> lugares, List<Integer> idConexiones ) {
+		var pais = paises.findFirst[it.getId == id ]
+		pais.caracteristicasDelPais = carac
+		pais.modificarLugares(lugares)
+		var ArrayList<Pais> conexiones
+		for (Integer p : idConexiones){
+			conexiones.add(paises.findFirst[it.id == p])
+		}
+		pais.paisConexiones = conexiones
 		
 	}
 	
